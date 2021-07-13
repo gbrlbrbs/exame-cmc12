@@ -1,4 +1,4 @@
-function J = fitness_z(K)
+function J = fitness_x(K)
 
 Kd = K(1);
 Kp = K(2);
