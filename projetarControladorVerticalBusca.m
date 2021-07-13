@@ -16,6 +16,11 @@ function controlador = projetarControladorVerticalBusca(requisitos, planta)
 % controlador.Ki: ganho integrativo.
 % controlador.Kd: ganho derivativo.
 
+% controlador = projetarControladorVerticalAnalitico(requisitos, planta);
+% K0 = [controlador.Kd; controlador.Kp; controlador.Ki];
+% func = @fitness;
+% Kmin = cmaes(func, K0, 1)
+
 % Numero de valores de cada parametro usados na grade
 N = 20;
 
