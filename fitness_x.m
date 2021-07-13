@@ -12,7 +12,7 @@ info = stepinfo(dinamica, 'RiseTimeLimits', [0, 1]);
 trs = info.RiseTime;
 Mps = info.Overshoot/100;
 
-J = abs(requisitos.z.tr - trs)./abs(requisitos.z.tr) ...
-    + abs(requisitos.z.Mp - Mps)./abs(requisitos.z.Mp);
+J = abs(requisitos.x.tr - trs)./abs(requisitos.x.tr) ...
+    + abs(requisitos.x.Mp - Mps)./abs(requisitos.x.Mp);
 
 end
