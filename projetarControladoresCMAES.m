@@ -1,7 +1,18 @@
 function [controladorZ, controladorX] = ...
     projetarControladoresCMAES(requisitos, planta)
 % [controladorZ, controladorX] = projetarControladoresCMAES(requisitos, planta)
-%   Detailed explanation goes here
+%   Projeta os controladores vertical e horizontal a partir do algoritmo
+%   de otimização CMA-ES, diferentemente do projeto a partir de uma busca.
+%   Devido a construção das funções de fitness, o algoritmo retorna o vetor
+%   de ganhos [Kd, Kp, Ki]' que minimiza o valor que a função calcula. O 
+%   valor inicial K0 é dado pelo valor analiticamente calculado, que foi
+%   mostrado no relatório que não atende aos requisitos pedidos.
+%   
+%   requisitos: os requisitos para o controlador do multicóptero inteiro,
+%   retornado pela função obterRequisitos();
+%   planta: os dados do multicóptero;
+%   
+
 controladorZ = projetarControladorVerticalAnalitico(requisitos.z, planta);
 controladorX = projetarControladorHorizontalAnalitico(requisitos.x, planta);
 

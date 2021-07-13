@@ -1,4 +1,7 @@
 function J = fitness_x(K)
+% função de fitness para a malha horizontal enviado ao CMA-ES
+% K é um vetor [Kd, Kp, Ki]'
+% J é a função de fitness propriamente dita
 
 Kd = K(1);
 Kp = K(2);
