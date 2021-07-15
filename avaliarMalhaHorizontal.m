@@ -10,26 +10,32 @@ planta = obterPlantaMulticoptero();
 
 controladorXAnalitico = projetarControladorHorizontalAnalitico(requisitos.x, planta);
 controladorXIterativo = projetarControladorHorizontalBusca(requisitos.x, requisitos.theta, planta);
-
+[~,controladorB] = projetarControladoresCMAES(requisitos.x, planta);
 controladorTheta = projetarControladorArfagem(requisitos.theta, planta);
 
 malhaAnalitico = obterMalhaHorizontal(controladorXAnalitico, controladorTheta, planta);
 malhaBusca = obterMalhaHorizontal(controladorXIterativo, controladorTheta, planta);
+malhaCMAESx = obterMalhaHorizontal(controladorB,controladorTheta, planta);
 
 t = 0:1e-3:5;
 
 xAnalitico = step(malhaAnalitico, t);
 xIterativo = step(malhaBusca, t);
+xCMAES = step(malhaCMAESx, t);
 
 figure;
 hold on;
+
 plot(t, xAnalitico, 'LineWidth', 2);
 plot(t, xIterativo, 'LineWidth', 2);
+plot(t, xCMAES, 'LineWidth', 2);
+
 grid on;
+
 xlabel('Tempo (s)', 'FontSize', 14);
 ylabel('X (m)', 'FontSize', 14);
 set(gca, 'FontSize', 14);
-legend('Analitico', 'Iterativo', 'FontSize', 14, 'Location', 'Southeast');
+legend('Analitico', 'Iterativo','CMA-ES', 'FontSize', 14, 'Location', 'Southeast');
 
 print -depsc2 ./figures/resposta_horizontal.eps
 

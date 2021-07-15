@@ -13,8 +13,8 @@ function [controladorZ, controladorX] = ...
 %   planta: os dados do multicóptero;
 %   
 
-controladorZ = projetarControladorVerticalAnalitico(requisitos.z, planta);
-controladorX = projetarControladorHorizontalAnalitico(requisitos.x, planta);
+controladorZ = projetarControladorVerticalAnalitico(requisitos, planta);
+controladorX = projetarControladorHorizontalAnalitico(requisitos, planta);
 
 K0_z = [controladorZ.Kd, controladorZ.Kp, controladorZ.Ki];
 K_z = cmaes('fitness_z', K0_z, 0.1);
