@@ -1,15 +1,16 @@
 function J = fitness_x(K)
 % função de fitness para a malha horizontal enviado ao CMA-ES
-% K é um vetor [Kd, Kp, Ki]'
+% K é um vetor [Kd, Kp, Ki]', nesta ordem
 % J é a função de fitness propriamente dita
 
-Kd = K(1);
-Kp = K(2);
-Ki = K(3);
+controladorX.Kd = K(1);
+controladorX.Kp = K(2);
+controladorX.Ki = K(3);
 
 planta = obterPlantaMulticoptero();
 requisitos = obterRequisitos();
-dinamica = tf(Ki, [planta.m, Kd, Kp, Ki]);
+controladorTheta = projetarControladorArfagem(requisitos.theta, planta);
+dinamica = obterMalhaHorizontal(controladorX, controladorTheta, planta);
 info = stepinfo(dinamica, 'RiseTimeLimits', [0, 1]);
 
 trs = info.RiseTime;
