@@ -2,4 +2,6 @@
 *.mat
 *.asv
 *.slxc
+*.slx.autosave
 /figures
+/slprj

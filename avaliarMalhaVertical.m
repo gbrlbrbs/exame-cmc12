@@ -40,6 +40,7 @@ legend('Analitico', 'Iterativo','CMA-ES', 'FontSize', 14, 'Location', 'Southeast
 % disp('busca:');
 % disp(stepinfo(malhaBusca, 'RiseTimeLimits', [0, 1]));
 
-print -depsc2 ./figures/resposta_vertical.eps
+% print -depsc2 ./figures/resposta_vertical.eps
+print -dpng -r400 ./figures/resposta_vertical.png
 
 end

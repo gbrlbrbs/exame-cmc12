@@ -1,7 +1,7 @@
-simus = ['a', 'b', 'c', 'd', 'e', 'f', 'g'];
+simus = ['f', 'g'];  % vetor de char para selecionar as simus
 planta = obterPlantaMulticoptero();
 requisitos = obterRequisitos();
-controlador = projetarControladorMulticoptero(requisitos, planta);
+controlador = projetarControladorMulticoptero(requisitos, planta, 'cmaes');
 
 % gerar graficos
 for char = simus

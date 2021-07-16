@@ -2,8 +2,8 @@ function tracarGraficosSimulacao(simulacao)
 % tracarGraficosSimulacao(simulacao) traca graficos de uma simulacao de
 % voo do multicoptero.
 
-% formato = 'png'; % para usuarios de Word
-formato = 'eps'; % para usuarios de LaTeX
+formato = 'png'; 
+% formato = 'eps';
 
 figure;
 plot(simulacao.xr.signals.values, simulacao.zr.signals.values, 'r', 'LineWidth', 2);

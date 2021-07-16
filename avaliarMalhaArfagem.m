@@ -22,6 +22,7 @@ xlabel('Tempo (s)', 'FontSize', 14);
 ylabel('\theta (rad)', 'FontSize', 14);
 set(gca, 'FontSize', 14);
 
-print -depsc2 ./figures/resposta_arfagem.eps
+% print -depsc2 ./figures/resposta_arfagem.eps
+print -dpng -r400 ./figures/resposta_arfagem.png
 
 end

@@ -37,6 +37,7 @@ ylabel('X (m)', 'FontSize', 14);
 set(gca, 'FontSize', 14);
 legend('Analitico', 'Iterativo','CMA-ES', 'FontSize', 14, 'Location', 'Southeast');
 
-print -depsc2 ./figures/resposta_horizontal.eps
+% print -depsc2 ./figures/resposta_horizontal.eps
+print -dpng -r400 ./figures/resposta_horizontal.png
 
 end

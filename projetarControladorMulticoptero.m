@@ -1,4 +1,5 @@
-function controlador = projetarControladorMulticoptero(requisitos, planta)
+function controlador = projetarControladorMulticoptero(...
+    requisitos, planta, algoritmo)
 % controlador = projetarControladorMulticoptero(requisitos, planta) projeta
 % controladores para todas as malhas do multicoptero. As entradas da funcao
 % sao as structs requisitos e planta com os requisitos do sistema e os
@@ -27,7 +28,17 @@ function controlador = projetarControladorMulticoptero(requisitos, planta)
 % controlador.z.Kd: ganho derivativo do controlador vertical.
 
 controlador.theta = projetarControladorArfagem(requisitos.theta, planta);
-controlador.x = projetarControladorHorizontalBusca(requisitos.x, requisitos.theta, planta);
-controlador.z = projetarControladorVerticalBusca(requisitos.z, planta);
+
+if strcmp(algoritmo, 'busca')
+    controlador.x = projetarControladorHorizontalBusca(requisitos.x, ...
+        requisitos.theta, planta);
+    controlador.z = projetarControladorVerticalBusca(requisitos.z, planta);
+elseif strcmp(algoritmo, 'cmaes')
+    controlador.x = projetarControladorHorizontalCMAES(requisitos.x, planta);
+    controlador.z = projetarControladorVerticalCMAES(requisitos.z, planta);
+else
+    controlador.x = projetarControladorHorizontalAnalitico(requisitos.x, planta);
+    controlador.z = projetarControladorVerticalAnalitico(requisitos.z, planta);
+
 
 end
