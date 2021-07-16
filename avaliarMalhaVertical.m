@@ -8,11 +8,11 @@ planta = obterPlantaMulticoptero();
 
 controladorAnalitico = projetarControladorVerticalAnalitico(requisitos, planta);
 controladorBusca = projetarControladorVerticalBusca(requisitos, planta);
-[controladorA,~] = projetarControladoresCMAES(requisitos, planta);
+controladorCMAES = projetarControladorVerticalCMAES(requisitos, planta);
 
 malhaAnalitico = obterMalhaVertical(controladorAnalitico, planta);
 malhaBusca = obterMalhaVertical(controladorBusca, planta);
-malhaCMAESz = obterMalhaVertical(controladorA, planta);
+malhaCMAESz = obterMalhaVertical(controladorCMAES, planta);
 
 t = 0:1e-3:5;
 

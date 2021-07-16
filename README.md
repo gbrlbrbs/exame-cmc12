@@ -14,4 +14,4 @@ Para gerar os gráficos de resposta ao degrau, utiliza as funções `avaliarMalh
 - Simulação f): curva de Lissajous similar à do relatório, mas com período 8s;
 - Simulação g): curva de Lissajous utilizada no relatório.
 
-Todos os gráficos são salvos em `png` na pasta `figures`. Eles não estão inclusos neste repositório devido ao `.gitignore`
+Todos os gráficos são salvos em `png` na pasta `figures`. Estão inclusos neste repositório os gráficos de respota ao degrau da malha horizontal e da malha vertical.

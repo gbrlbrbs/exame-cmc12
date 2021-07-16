@@ -3,5 +3,6 @@
 *.asv
 *.slxc
 *.slx.autosave
-/figures
+/figures/**/
+/figures/slprj
 /slprj
